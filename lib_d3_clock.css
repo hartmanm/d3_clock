@@ -4,9 +4,9 @@ mnh_license@proton.me
 https://github.com/hartmanm
 */ 
 
-.header{padding: 0px; text-align: center; color: #9d9d9d; background-color: #101010;}
-div{justify-items: center; overflow:hidden; width:100%;padding: 0px 0px;}
+/*.d3_clock_header{padding: 0px; text-align: center; color: #9d9d9d; background-color: #101010;}*/
+d3_clock_div{justify-items: center; overflow:hidden; width:100%;padding: 0px 0px;}
 /*(ddiv{margin-left: auto; margin-right:auto;}*/
-body{background:#101010;}
+/*body{background:#101010;}*/
 svg{margin: 40, 40, 40, 40;}
-dh1{margin-left: auto; margin-right:auto; text-align: center; color: #9d9d9d;}
+/*dh1{margin-left: auto; margin-right:auto; text-align: center; color: #9d9d9d;}*/

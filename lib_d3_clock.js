@@ -135,11 +135,11 @@ let dayData = [
 ]
 let input_life_expectancy_in_years=77;
 
-function append_dh1(parent,innerhtml){
-let one = document.createElement("dh1");
-one.innerHTML = innerhtml;
-parent.appendChild(one);
-}
+//function append_dh1(parent,innerhtml){
+//let one = document.createElement("dh1");
+//one.innerHTML = innerhtml;
+//parent.appendChild(one);
+//}
 
 function display_seconds(){
 let screen_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -188,8 +188,8 @@ rect = svg
 let now = new Date;
 now =Math.abs(now.getSeconds()-start)
 let inner;
-if(d.minute ==1){inner=`<div>${d.minute} second</div>`}
-if(d.minute !=1){inner=`<div>${d.minute} seconds</div>`}
+if(d.minute ==1){inner=`<d3_clock_div>${d.minute} second</d3_clock_div>`}
+if(d.minute !=1){inner=`<d3_clock_div>${d.minute} seconds</d3_clock_div>`}
 tooltip
 .html(
 // `<div>${d.minute}:${now}</div>`
@@ -321,12 +321,12 @@ let rect = svg
 let now = new Date;
 now =Math.abs(now.getSeconds()-start)
 let inner;
-if(d.minute ==1){inner=`<div>${d.minute} minute</div>`}
-if(d.minute !=1){inner=`<div>${d.minute} minutes</div>`}
+if(d.minute ==1){inner=`<d3_clock_div>${d.minute} minute</d3_clock_div>`}
+if(d.minute !=1){inner=`<d3_clock_div>${d.minute} minutes</d3_clock_div>`}
 tooltip
 .html(
-// `<div>${d.minute}:${now}</div>`
-//  `<div>${d.minute}</div>`
+// `<d3_clock_div>${d.minute}:${now}</d3_clock_div>`
+//  `<d3_clock_div>${d.minute}</d3_clock_div>`
 inner
 )
 .style('visibility', 'visible');
@@ -408,12 +408,12 @@ let rect = svg
 let now = new Date;
 now =Math.abs(now.getSeconds()-start)
 let inner;
-if(d.minute ==1){inner=`<div>${d.minute} hour</div>`}
-if(d.minute !=1){inner=`<div>${d.minute} hours</div>`}
+if(d.minute ==1){inner=`<d3_clock_div>${d.minute} hour</d3_clock_div>`}
+if(d.minute !=1){inner=`<d3_clock_div>${d.minute} hours</d3_clock_div>`}
 tooltip
 .html(
-// `<div>${d.minute}:${now}</div>`
-//  `<div>${d.minute}</div>`
+// `<d3_clock_div>${d.minute}:${now}</d3_clock_div>`
+//  `<d3_clock_div>${d.minute}</d3_clock_div>`
 inner
 )
 .style('visibility', 'visible');
@@ -449,6 +449,7 @@ d3.active(this)
 });
 }
 
+/*
 function display_title(){
 let screen_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 //let screen_width = window.availWidth;
@@ -496,7 +497,7 @@ let svg = d3.select("#title_view")
 ///     .append('rect')
 //    .html(inner)
 }
-
+*/
 display_seconds();
 display_minutes();
 display_hours();
