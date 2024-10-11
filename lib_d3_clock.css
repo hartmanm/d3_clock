@@ -5,7 +5,7 @@ https://github.com/hartmanm
 */ 
 body{background-color: #101010;}
 /*.d3_clock_header{padding: 0px; text-align: center; color: #9d9d9d; background-color: #101010;}*/
-.d3_clock_div{padding: 0px 35%; overflow:hidden;}
+.d3_clock_div{padding: 0px 25%; overflow:hidden;}
 /*(ddiv{margin-left: auto; margin-right:auto;}*/
 /*body{background:#101010;}*/
 svg{margin: 40, 40, 40, 40; background-color: #101010;}
