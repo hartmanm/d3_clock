@@ -135,7 +135,6 @@ let dayData = [
 ]
 let input_life_expectancy_in_years=77;
 
-
 function append_dh1(parent,innerhtml){
 let one = document.createElement("dh1");
 one.innerHTML = innerhtml;
@@ -159,30 +158,22 @@ let tooltip = d3
 .style('border-radius', '4px')
 .style('color', '#fff')
 
-
 let data = rawData;
-
 let width = screen_width 
 let height = screen_height / 4
-
-let   x = d3
+let x = d3
 .scaleBand()
 .range([0, width])
 .domain(data.map(d => d.minute))
 .padding(0.2);
-
-let  y = d3
+let y = d3
 .scaleLinear()
 .domain([0, d3.max(data, d => d.value)])
 .range([height, 0]);
-
-
 let svg = d3.select("#seconds_view")
 .attr("viewBox", [0, 0, width, height]);
-
 let start = new Date;
 start =start.getSeconds()
-
 rect = svg
 .selectAll('g')
 .data(data)
@@ -255,15 +246,9 @@ d3.select(this).attr('height', y.height );
 //d3.select(this).attr('height', d => height )//- y(0))'
 })
 */
-
-
 rect.transition()
 .delay(function(d, i) { return i * 1000; })
 .on("start", function repeat() {
-
-
-
-
 let select = d3.active(this)
 //  console.log(select.data.i)
 // if(select.data.i == 60){display_seconds}
@@ -285,30 +270,15 @@ select
 //d3.select('#seconds_view').html = ""
 // .on("start", display_seconds);
 .on("start", repeat);
-
-
-
 });
-
 }
 
-
-
-
 function display_minutes(){
-
-
 let screen_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
 //let screen_width = window.availWidth;
 let screen_height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-
 let staticColor = 'rgb(119, 0, 255)';
-
 let hoverColor = '#eec42d';
-
-
 let tooltip = d3
 .select('body')
 .append('rect')
@@ -320,34 +290,23 @@ let tooltip = d3
 .style('background', 'rgba(0,0,0,0.6)')
 .style('border-radius', '4px')
 .style('color', '#fff')
-
-
 let data = rawData;
-
 let width = screen_width
 let height = screen_height / 6
-
-let   x = d3
+let x = d3
 .scaleBand()
 .range([0, width])
 .domain(data.map(d => d.minute))
 .padding(0.2);
-
-
-let  y = d3
+let y = d3
 .scaleLinear()
 .domain([0, d3.max(data, d => d.value)])
 .range([height, 0]);
-
-
-
 let svg = d3.select("#minutes_view")
 .attr("viewBox", [0, 0, width, height]);
-
 let start = new Date;
 start =start.getSeconds()
 let minutes = 0;
-
 let rect = svg
 .selectAll('g')
 .data(data)
@@ -381,52 +340,32 @@ tooltip
 tooltip.html(``).style('visibility', 'hidden');
 //  d3.active(this).append('rect').attr('height', y.height )
 })
-
-
 rect.transition()
 .delay(function(d, i) { return i * 60000; })
 .on("start", function repeat() {
-
 d3.active(this)
 .transition()
 .ease(d3.easeLinear)
 .duration(60000)
 .attr('y', d => y(d.value))
 .attr('height', d => height )
-
 .transition()
 .duration(60000*60)
 .attr('y', d => y(d.value))
 .attr('height', d => height )
 
-
-
 .transition()
 .attr('height', y.height )
 .on("start", repeat);
-
-
-
 });
-
 }
 
-
-
 function display_hours(){
-
-
 let screen_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
 //let screen_width = window.availWidth;
 let screen_height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-
 let staticColor = 'rgb(119, 0, 255)';
-
 let hoverColor = '#eec42d';
-
-
 let tooltip = d3
 .select('body')
 .append('rect')
@@ -438,34 +377,23 @@ let tooltip = d3
 .style('background', 'rgba(0,0,0,0.6)')
 .style('border-radius', '4px')
 .style('color', '#fff')
-
-
 let data = hourData;
-
 let width = screen_width
 let height = screen_height / 8
-
-let   x = d3
+let x = d3
 .scaleBand()
 .range([0, width])
 .domain(data.map(d => d.minute))
 .padding(0.2);
-
-
-let  y = d3
+let y = d3
 .scaleLinear()
 .domain([0, d3.max(data, d => d.value)])
 .range([height, 0]);
-
-
-
 let svg = d3.select("#hours_view")
 .attr("viewBox", [0, 0, width, height]);
-
 let start = new Date;
 start =start.getSeconds()
 let minutes = 0;
-
 let rect = svg
 .selectAll('g')
 .data(data)
@@ -500,8 +428,6 @@ tooltip
 tooltip.html(``).style('visibility', 'hidden');
 })
 
-
-
 rect.transition()
 .delay(function(d, i) { return i * 60000*60; })
 .on("start", function repeat() {
@@ -520,28 +446,15 @@ d3.active(this)
 .transition()
 .attr('height', y.height )
 .on("start", repeat);
-
-
-
 });
-
 }
 
-
 function display_title(){
-
-
 let screen_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
 //let screen_width = window.availWidth;
 let screen_height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-
 let staticColor = 'rgb(119, 0, 255)';
-
 let hoverColor = '#eec42d';
-
-
 let tooltip = d3
 .select('body')
 .append('rect')
@@ -553,26 +466,18 @@ let tooltip = d3
 .style('background', 'rgba(0,0,0,0.6)')
 .style('border-radius', '4px')
 .style('color', '#fff')
-
-
 let data = rawData;
-
 let width = screen_width
 let height = screen_height / 8
-
-let   x = d3
+let x = d3
 .scaleBand()
 .range([0, width])
 .domain(data.map(d => d.minute))
 .padding(0.2);
-
-
-let  y = d3
+let y = d3
 .scaleLinear()
 .domain([0, d3.max(data, d => d.value)])
 .range([height, 0]);
-
-
 let inner=`<h3>This is your life.  Time is flying by.</h3>`
 let svg = d3.select("#title_view")
 .attr("viewBox", [0, 0, width, height])
@@ -590,8 +495,6 @@ let svg = d3.select("#title_view")
 //     .enter()
 ///     .append('rect')
 //    .html(inner)
-
-
 }
 
 display_seconds();
